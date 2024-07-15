@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:contentPadding="6dp"
+        android:layout_margin="6dp"
+        android:scrollbars="vertical"
+        android:focusable="true">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:paddingTop="4dp">
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="68dp"
+                android:layout_height="68dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/firemax"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="8dp"
+                android:layout_toRightOf="@+id/imageView">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/love"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="end"
+                        android:paddingEnd="8dp"
+                        android:layout_alignParentEnd="true"
+                        app:srcCompat="@drawable/heart" />
+
+                    <TextView
+                        android:id="@+id/textViewTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:padding="4dp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/nunito_sans"
+                        android:text="Multi Vitatmins for Men"/>
+
+                <TextView
+                    android:id="@+id/textViewDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:textSize="10sp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:layout_below="@id/textViewTitle"
+                    android:text="Millions &amp; Millions"
+                    android:textColor="#A9A9A9"/>
+
+                <TextView
+                    android:id="@+id/textViewPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="₦ 4,000.00"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:layout_marginTop="12dp"
+                    android:textColor="#DC1250"
+                    android:layout_below="@id/textViewDesc"/>
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="- 1 +"
+                    android:textSize="12sp"
+                    app:chipBackgroundColor="#EEEEEE"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/textViewDesc"/>
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/vector"
+                        android:layout_below="@id/textViewDesc"
+                        android:layout_alignParentEnd="true"
+                        android:paddingTop="16dp"/>
+                </RelativeLayout>
+" />
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

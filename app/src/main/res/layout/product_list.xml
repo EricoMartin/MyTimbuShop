@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:contentPadding="6dp"
+        android:layout_margin="6dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        android:scrollbars="vertical"
+        android:focusable="true">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:paddingTop="4dp">
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="68dp"
+        android:layout_height="68dp"
+        android:layout_margin="8dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/firemax"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="32dp"
+        android:layout_below="@+id/imageView">
+
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_sans"
+            android:text="Vitamins"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/textViewName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop ="12dp"
+                android:paddingBottom="16dp"
+                android:paddingEnd="12dp"
+                android:textSize="8sp"
+                android:fontFamily="@font/nunito_sans"
+                android:text="Niacin"
+                android:textColor="#A9A9A9" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1.8grams"
+                android:textSize="10sp"
+                android:backgroundTint="@color/white"
+                android:layout_toEndOf="@id/textViewName"/>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:progressTint="#FFCB45"
+                android:layout_marginLeft="-73dp"
+                android:rating="3.5"
+                android:scaleX="0.3"
+                android:scaleY="0.3"
+                android:stepSize="1.0" />
+
+            <TextView
+                android:id="@+id/text_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-73dp"
+                android:layout_toRightOf="@id/ratingBar"
+                android:paddingTop="16dp"
+                android:text="(4.8 rating)"
+                android:textColor="#606060"
+                android:fontFamily="@font/nunito_sans"
+                android:textSize="10sp"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/textViewPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="10sp"
+                android:text="₦ 5000"
+                android:fontFamily="@font/nunito_sans"
+                android:textColor="#DC1250"/>
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/icon__1_"
+                android:layout_alignParentEnd="true"
+                app:srcCompat="@drawable/icon__1_" />
+        </RelativeLayout>
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="12dp"
+                android:layout_height="16dp"
+                app:srcCompat="@drawable/heart"
+                android:layout_alignParentEnd="true"/>
+        </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+</RelativeLayout>

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MyTimbuShop</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="timbumed"><font color="#DC1250">Timbu</font>Med</string>
+    <string name="content_string">Get a little lift from Men\'s Multivitamins, featuring a comprehensive blend of essential vitamins and minerals tailored for men\'s health. Experience sustained energy and overall well-being throughout the day. Men\'s Multivitamins offer a carefully formulated combination of nutrients to support immune function, muscle health, and mental clarity. This unique formulation makes a fresh statement for improved daily vitality and optimal performance.</string>
+    <string name="paystack_complete">After clicking “pay now” you will be redirected to paystack to complete your purchase securely.</string>
+    <!--    <string name="text"><font color="#00ff00">Hello</font> <font-->
+<!--        color="#FF0000">World</font></string>-->
+
+    And you can see the result
+</resources>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.screens.CartFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/relate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="360dp"
+            android:src="@drawable/icons"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="58dp"
+            android:layout_marginTop="28dp"
+            android:fontFamily="@font/nunito_sans"
+            android:paddingStart="4dp"
+            android:scaleType="fitXY"
+            android:text="@string/timbumed"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="316dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="68dp"
+            android:src="@drawable/button_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="347dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="32dp"
+            android:src="@drawable/notification_bing"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cart Summary"
+            android:textSize="18sp"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="16dp"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="H-Medix Pharmacy (3)"
+            android:layout_marginStart="16dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/nunito_sans"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv1"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:layout_margin="16dp"
+            tools:listitem="@layout/cart_list_item" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MedBeauty Store (3)"
+            android:layout_marginStart="16dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/nunito_sans"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv2"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:layout_margin="16dp"
+            tools:listitem="@layout/cart_list_item" />
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="-88dp">
+            <Button
+                android:layout_width="320dp"
+                android:layout_height="57dp"
+                android:text="Checkout"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_gravity="center_horizontal"
+                android:backgroundTint="#DC1250"/>
+        </FrameLayout>
+
+    </LinearLayout>
+
+</FrameLayout>
