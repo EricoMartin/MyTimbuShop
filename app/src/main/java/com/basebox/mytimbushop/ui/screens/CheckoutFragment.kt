@@ -5,13 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.basebox.mytimbushop.R
 import com.basebox.mytimbushop.databinding.FragmentCheckoutBinding
-import com.basebox.mytimbushop.models.Items
-import com.basebox.mytimbushop.ui.CartAdapter
-import com.basebox.mytimbushop.ui.CheckoutAdapter
+import com.basebox.mytimbushop.ui.adapters.CheckoutAdapter
+import com.basebox.mytimbushop.ui.viewmodels.CartViewModel
 
 /**
  * A simple [Fragment] subclass.
@@ -22,6 +25,11 @@ class CheckoutFragment : Fragment() {
 
     private lateinit var _binding: FragmentCheckoutBinding
     private val binding get() = _binding
+    private val viewModel: CartViewModel by activityViewModels()
+
+    private var totalSum: Float = 2F
+    var size = 0
+    var name = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,18 +46,37 @@ class CheckoutFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var itemsList = arrayListOf<Items>(
-            Items(1, "Multivitamins", 3700.0, R.drawable.adobe, "Helps keep you healthy"),
-            Items(2, "Supplements", 4200.0, R.drawable.apple_phone, "Helps keep you healthy"),
-            Items(3, "Antibiotics", 2000.0, R.drawable.lavalier, "Helps keep you healthy"),
-            Items(4, "Painkillers", 1500.0, R.drawable.chromecast, "Helps keep you healthy"),
-            Items(5, "Multivitamins Extra", 6700.0, R.drawable.adobe, "Helps keep you healthy"),
-            Items(6, "Supplements Extra", 8200.0, R.drawable.apple_phone, "Helps keep you healthy"),
-            Items(7, "Antibiotics Extra", 5000.0, R.drawable.lavalier, "Helps keep you healthy"),
-            Items(8, "Painkillers Extra", 2500.0, R.drawable.chromecast, "Helps keep you healthy")
-        )
+
+        val tax = CheckoutFragmentArgs.fromBundle(requireArguments()).totalTax
+        val total = CheckoutFragmentArgs.fromBundle(requireArguments()).totalSum
+        val vat = CheckoutFragmentArgs.fromBundle(requireArguments()).totalVat
+        name = CheckoutFragmentArgs.fromBundle(requireArguments()).name
+
         val recycler1: RecyclerView = binding.rcv1
         recycler1.layoutManager = LinearLayoutManager(requireContext())
-        recycler1.adapter = CheckoutAdapter(itemsList)
+
+        with(binding) {
+            subtotalPrice.text = total.toString()
+            taxPrice.text = tax.toString()
+            shipPrice.text = vat.toString()
+            totalPrice.text= (tax + total + vat).toString()
+        }
+        totalSum =(tax + total + vat)
+
+        lifecycleScope.launchWhenStarted {
+            viewModel.cartItems.observe(requireActivity(), Observer { cartItem ->
+                binding.orderTitle.text = "Order Summary(${cartItem.size})"
+                size = cartItem.size
+                val adapter = CheckoutAdapter(cartItem)
+                recycler1.adapter = adapter
+            })
+        }
+        binding.btnTotal.setOnClickListener {
+            val action = CheckoutFragmentDirections.actionCheckoutFragmentToCardDetailsFragment(totalSum, name, size)
+            it.findNavController().navigate(action)
+        }
+        binding.imageView4.setOnClickListener {
+            it.findNavController().navigate(R.id.action_homeFragment_to_historyFragment)
+        }
     }
 }

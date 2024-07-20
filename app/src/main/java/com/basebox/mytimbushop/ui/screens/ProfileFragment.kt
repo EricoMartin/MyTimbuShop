@@ -5,7 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.basebox.mytimbushop.R
+import com.basebox.mytimbushop.databinding.FragmentHomeBinding
+import com.basebox.mytimbushop.databinding.FragmentProfileBinding
 
 /**
  * A simple [Fragment] subclass.
@@ -14,6 +17,8 @@ import com.basebox.mytimbushop.R
  */
 class ProfileFragment : Fragment() {
 
+    private lateinit var _binding: FragmentProfileBinding
+    private val binding get() = _binding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -24,7 +29,18 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+        _binding = FragmentProfileBinding.inflate(layoutInflater, container, false)
+        return _binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.imageView3.setOnClickListener {
+            it.findNavController().navigate(R.id.action_homeFragment_to_cartFragment)
+        }
+        binding.imageView4.setOnClickListener {
+            it.findNavController().navigate(R.id.action_homeFragment_to_historyFragment)
+        }
     }
 
 

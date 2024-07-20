@@ -1,61 +1,78 @@
 package com.basebox.mytimbushop.models
 
 
+import android.os.Parcel
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parceler
+import kotlinx.parcelize.Parcelize
+import kotlinx.parcelize.TypeParceler
 
+object AnyParcel : Parceler<Any?> {
+    override fun create(parcel: Parcel): Any? {
+        return parcel.readString().toString()// Assuming Any is represented as a String. Adjust based on actual type.
+    }
+
+    override fun Any?.write(parcel: Parcel, flags: Int) {
+        parcel.writeString(this as? String) // Assuming Any is represented as a String. Adjust based on actual type.
+    }
+}
+
+@Parcelize
+@TypeParceler<Any?, AnyParcel>
 data class Item(
     @SerializedName("available_quantity")
-    val availableQuantity: Int,
+    val availableQuantity: Int = 0,
     @SerializedName("buying_price")
-    val buyingPrice: Any,
+    val buyingPrice: Any?,
     @SerializedName("categories")
-    val categories: List<Any>,
+    val categories: List<Any?>,
     @SerializedName("current_price")
-    val currentPrice: List<CurrentPrice>,
+    val currentPrice: List<CurrentPrice> = emptyList(),
     @SerializedName("date_created")
-    val dateCreated: String,
+    val dateCreated: String = "",
     @SerializedName("description")
-    val description: String,
+    val description: String = "",
     @SerializedName("discounted_price")
-    val discountedPrice: Any,
+    val discountedPrice: Any?,
     @SerializedName("extra_infos")
-    val extraInfos: Any,
+    val extraInfos: Any?,
     @SerializedName("id")
-    val id: String,
+    val id: String = "",
     @SerializedName("is_available")
-    val isAvailable: Boolean,
+    val isAvailable: Boolean = false,
     @SerializedName("is_deleted")
-    val isDeleted: Boolean,
+    val isDeleted: Boolean = false,
     @SerializedName("is_service")
-    val isService: Boolean,
+    val isService: Boolean = false,
     @SerializedName("last_updated")
-    val lastUpdated: String,
+    val lastUpdated: String = "",
     @SerializedName("name")
     val name: String,
     @SerializedName("organization_id")
-    val organizationId: String,
+    val organizationId: String = "",
     @SerializedName("parent")
-    val parent: Any,
+    val parent: Any?,
     @SerializedName("parent_product_id")
-    val parentProductId: Any,
+    val parentProductId: Any?,
     @SerializedName("photos")
-    val photos: List<Photo>,
+    val photos: List<Photo> =  emptyList(),
     @SerializedName("previous_url_slugs")
-    val previousUrlSlugs: Any,
+    val previousUrlSlugs: Any?,
     @SerializedName("product_image")
-    val productImage: List<Any>,
+    val productImage: List<Any?>,
     @SerializedName("selling_price")
-    val sellingPrice: Any,
+    val sellingPrice: Any?,
     @SerializedName("unavailable")
-    val unavailable: Boolean,
+    val unavailable: Boolean = false,
     @SerializedName("unavailable_end")
-    val unavailableEnd: Any,
+    val unavailableEnd: Any?,
     @SerializedName("unavailable_start")
-    val unavailableStart: Any,
+    val unavailableStart: Any?,
     @SerializedName("unique_id")
-    val uniqueId: String,
+    val uniqueId: String = "",
     @SerializedName("url_slug")
-    val urlSlug: String,
+    val urlSlug: String = "",
     @SerializedName("user_id")
-    val userId: String
-)
+    val userId: String  = ""
+) : Parcelable

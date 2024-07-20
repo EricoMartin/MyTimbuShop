@@ -18,9 +18,10 @@
             android:paddingTop="4dp">
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="68dp"
-                android:layout_height="68dp"
+                android:layout_width="88dp"
+                android:layout_height="96dp"
                 android:layout_margin="8dp"
+                android:scaleType="centerCrop"
                 android:src="@drawable/firemax"/>
 
             <LinearLayout
@@ -85,6 +86,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_below="@id/textViewDesc"/>
                     <ImageView
+                        android:id="@+id/delete_item"
                         android:layout_width="32dp"
                         android:layout_height="32dp"
                         android:src="@drawable/vector"

@@ -5,17 +5,15 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
-import androidx.viewpager2.widget.ViewPager2
 import com.basebox.mytimbushop.R
 import com.basebox.mytimbushop.databinding.FragmentDetailsBinding
-import com.basebox.mytimbushop.models.Photo
-import com.basebox.mytimbushop.models.Photos
-import com.basebox.mytimbushop.ui.ImageAdapter
-import com.basebox.mytimbushop.ui.ProductViewModel
+import com.basebox.mytimbushop.models.CartItem
+import com.basebox.mytimbushop.models.Product
+import com.basebox.mytimbushop.ui.adapters.ImageAdapter
+import com.basebox.mytimbushop.ui.viewmodels.CartViewModel
 
 /**
  * A simple [Fragment] subclass.
@@ -26,13 +24,9 @@ private const val TAG = "DetailsFragment"
 
 class DetailsFragment : Fragment() {
 
-    private val viewModel: ProductViewModel by viewModels()
     private lateinit var _binding: FragmentDetailsBinding
     private val binding get() = _binding
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    private val viewModel: CartViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,28 +39,48 @@ class DetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val itemList = listOf(
-            Photos(R.drawable.firemax),
-            Photos(R.drawable.adobe),
-            Photos(R.drawable.chromecast),
-            Photos(R.drawable.timbumed),
-            Photos(R.drawable.lavalier)
-        )
+        val product = DetailsFragmentArgs.fromBundle(requireArguments()).products
+//        val position: Int  = DetailsFragmentArgs.fromBundle(requireArguments()).pos
         val viewPager = binding.viewPager
-        viewPager.adapter = ImageAdapter(itemList)
+
         binding.img.setOnClickListener {
             it.findNavController().navigate(R.id.action_detailsFragment_to_homeFragment)
         }
-//        viewModel.products.observe(requireActivity()) { product ->
-//            product.items.forEach {
-//                Log.d(TAG, "Images: ${it.photos.first()}")
-//                viewPager.adapter = ImageAdapter(it.photos)
-//            }
-//        }
-//        viewModel.error.observe(requireActivity()){ error ->
-//            Log.d(TAG, "Images Error: $error")
-//            Toast.makeText(requireContext(), "Error fetching data: $error", Toast.LENGTH_LONG).show()
-//        }
+        product?.let {
+            with(binding){
+                tv.text = it.name
+                tv1.text = it.uniqueId
+                tv3.text = it.description
+                tv5.text = it.currentPrice[0].nGN[0].toString()
+                viewPager.adapter = ImageAdapter(it.photos)
+                button.setOnClickListener { view ->
+                    val cartItem = CartItem(
+                        id = 0,
+                        name = it.name,
+                        price = it.currentPrice[0].nGN[0].toString().toDouble(),
+                        desc = it.description,
+                        img = it.photos,
+                        availableQuantity = it.availableQuantity,
+                        isAvailable = it.isAvailable,
+                        userId = it.userId,
+                        itemId = it.id,
+                        organizationId = it.organizationId,
+                        liked = false
+                    )
+                    viewModel.addCartItem(cartItem)
+                }
+            }
+        }
+    }
+
+    companion object {
+        fun newInstance(product: Product, position: Int): DetailsFragment {
+            val fragment = DetailsFragment()
+            val args = Bundle()
+            args.putParcelable("product", product)
+            args.putInt("pos", position)
+            fragment.arguments = args
+            return fragment
+        }
     }
 }

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical">
+<!--        <LinearLayout-->
+<!--            android:id="@+id/user_email"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical">-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Email"-->
+<!--                android:textStyle="bold"-->
+<!--                android:fontFamily="sans-serif-light"-->
+<!--                android:textColor="#DC1250"-->
+<!--                android:textSize="16sp"/>-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="User Email"-->
+<!--                android:fontFamily="sans-serif-light"-->
+<!--                android:textColor="#DC1250"-->
+<!--                android:textSize="16sp"/>-->
+
+<!--            <View-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="1dp"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:background="#DC1250"-->
+<!--                />-->
+
+<!--        </LinearLayout>-->
+
+        <LinearLayout
+            android:id="@+id/user_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phone"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-light"
+                android:textColor="#DC1250"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="08012345612"
+                android:fontFamily="sans-serif-light"
+                android:textColor="#DC1250"
+                android:textSize="16sp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="#DC1250"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/user_linked_in"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="linkedin"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-light"
+                android:textColor="#DC1250"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LinkedIn Link"
+                android:fontFamily="sans-serif-light"
+                android:textColor="#DC1250"
+                android:textSize="16sp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="#DC1250"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/user_twitter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Twitter"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-light"
+                android:textColor="#DC1250"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EricoMartini"
+                android:fontFamily="sans-serif-light"
+                android:textColor="#DC1250"
+                android:textSize="16sp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="#DC1250"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

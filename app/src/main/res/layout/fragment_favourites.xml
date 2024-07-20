@@ -27,7 +27,7 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="28dp"
                 android:layout_marginEnd="360dp"
-                android:src="@drawable/icons"
+                android:src="@drawable/menu_icon"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -75,5 +75,32 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Favourites"
+            android:textSize="18sp"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="16dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Likes (3)"
+            android:layout_marginStart="16dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/nunito_sans"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp"
+            tools:listitem="@layout/cart_list_item" />
+
     </LinearLayout>
 </FrameLayout>
