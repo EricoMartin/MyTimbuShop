@@ -1,7 +1,6 @@
 package com.basebox.mytimbushop.ui.screens
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,9 +30,9 @@ class DetailsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        _binding = FragmentDetailsBinding.inflate(inflater, container,false)
+        _binding = FragmentDetailsBinding.inflate(inflater, container, false)
         return _binding.root
     }
 
@@ -46,8 +45,8 @@ class DetailsFragment : Fragment() {
         binding.img.setOnClickListener {
             it.findNavController().navigate(R.id.action_detailsFragment_to_homeFragment)
         }
-        product?.let {
-            with(binding){
+        product.let {
+            with(binding) {
                 tv.text = it.name
                 tv1.text = it.uniqueId
                 tv3.text = it.description

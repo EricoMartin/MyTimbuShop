@@ -42,30 +42,17 @@ class HomeFragment : Fragment() {
     private val cartViewModel: CartViewModel by activityViewModels()
 
     private lateinit var drawerLayout: DrawerLayout
-    private lateinit var navController: NavController
 
     private val organizationId: String = "67102ab35e7742088683036c5e8a368d"
     private val appId: String = "MZ2HN5PMS725RMD"
     private val apiKey: String = "1acfe466531340f79358fed1c54fe60620240708072804259309"
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentHomeBinding.inflate(inflater, container, false )
-//        viewModel.deleteAllProducts()
-        drawerLayout = _binding.drawerLayout
-//        val navHostFragment = childFragmentManager
-//            .findFragmentById(R.id.nav_container) as NavHostFragment
-//        navController = navHostFragment.navController
-//        val navView: NavigationView = _binding.navView
-//        NavigationUI.setupWithNavController(navView, navController)
 
         return _binding.root
     }

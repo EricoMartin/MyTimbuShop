@@ -37,7 +37,7 @@ class ProductAdapter (private val products: Product, private val itemClickListen
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
         val product = products.items[position]
         holder.textViewTitle.text = product.name
-        holder.textViewPrice.text = "₦ ${product.currentPrice[0].nGN[0].toString()?: 0}"
+        holder.textViewPrice.text = "₦ ${product.currentPrice[0].nGN[0].toString()}"
         holder.imgCart.setOnClickListener {
             val cartItem = CartItem(
                 id = 0,

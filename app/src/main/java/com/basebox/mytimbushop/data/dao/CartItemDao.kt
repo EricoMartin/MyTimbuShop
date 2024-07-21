@@ -1,13 +1,11 @@
 package com.basebox.mytimbushop.data.dao
 
 import androidx.room.Dao
-import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
 import com.basebox.mytimbushop.models.CartItem
-import com.basebox.mytimbushop.models.Product
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -15,6 +13,7 @@ interface CartItemDao {
 
     @Query("SELECT COUNT(*) FROM cart_item WHERE id = :id")
     suspend fun productExists(id: Int): Int
+
     @Query("SELECT * FROM cart_item ORDER BY name ASC")
     fun getAllItems(): Flow<List<CartItem>>
 

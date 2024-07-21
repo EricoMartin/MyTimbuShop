@@ -6,12 +6,12 @@ import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parceler
 import kotlinx.parcelize.Parcelize
-import kotlinx.parcelize.RawValue
 import kotlinx.parcelize.TypeParceler
 
 object AnyParceler : Parceler<Any?> {
-    override fun create(parcel: Parcel): Any? {
-        return parcel.readString().toString()// Assuming Any is represented as a String. Adjust based on actual type.
+    override fun create(parcel: Parcel): Any {
+        return parcel.readString()
+            .toString()// Assuming Any is represented as a String. Adjust based on actual type.
     }
 
     override fun Any?.write(parcel: Parcel, flags: Int) {
@@ -36,16 +36,4 @@ data class Product(
     val size: Int,
     @SerializedName("total")
     val total: Int
-): Parcelable
-//{
-//    override fun hashCode(): Int {
-//        var result = 0
-//        items.forEach {
-//            result = it.id.hashCode()
-//            if (items.isNullOrEmpty()) {
-//                result = 31 * result + items.hashCode()
-//            }
-//        }
-//        return result
-//    }
-//}
+) : Parcelable

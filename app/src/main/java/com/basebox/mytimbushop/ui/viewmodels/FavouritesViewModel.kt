@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.basebox.mytimbushop.models.CartItem
 
-class FavouritesViewModel: ViewModel() {
+class FavouritesViewModel : ViewModel() {
     private val _cartItems = MutableLiveData<MutableList<CartItem>>(mutableListOf())
     val cartItems: LiveData<MutableList<CartItem>> get() = _cartItems
 

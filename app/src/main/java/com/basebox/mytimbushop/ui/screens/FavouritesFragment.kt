@@ -37,15 +37,10 @@ class FavouritesFragment : Fragment() {
         ProductViewModelFactory((requireActivity().application as MyTimbuApplication).repository, Dispatchers.IO)
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentFavouritesBinding.inflate(layoutInflater, container,false)
         return _binding.root

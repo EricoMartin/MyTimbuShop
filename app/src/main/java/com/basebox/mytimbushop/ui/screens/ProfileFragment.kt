@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.basebox.mytimbushop.R
-import com.basebox.mytimbushop.databinding.FragmentHomeBinding
 import com.basebox.mytimbushop.databinding.FragmentProfileBinding
 
 /**
@@ -19,15 +18,11 @@ class ProfileFragment : Fragment() {
 
     private lateinit var _binding: FragmentProfileBinding
     private val binding get() = _binding
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentProfileBinding.inflate(layoutInflater, container, false)
         return _binding.root

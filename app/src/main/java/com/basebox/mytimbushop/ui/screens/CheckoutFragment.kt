@@ -31,14 +31,10 @@ class CheckoutFragment : Fragment() {
     var size = 0
     var name = ""
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentCheckoutBinding.inflate(layoutInflater, container, false)
         return _binding.root

@@ -9,7 +9,7 @@ import kotlinx.parcelize.Parcelize
 import kotlinx.parcelize.TypeParceler
 
 object AnyParcel : Parceler<Any?> {
-    override fun create(parcel: Parcel): Any? {
+    override fun create(parcel: Parcel): Any {
         return parcel.readString().toString()// Assuming Any is represented as a String. Adjust based on actual type.
     }
 

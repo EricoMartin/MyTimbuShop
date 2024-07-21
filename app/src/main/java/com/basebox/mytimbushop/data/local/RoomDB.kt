@@ -1,7 +1,6 @@
 package com.basebox.mytimbushop.data.local
 
 import android.content.Context
-import androidx.databinding.adapters.Converters
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
@@ -30,6 +29,7 @@ abstract class RoomDB : RoomDatabase() {
                 database.execSQL("CREATE TABLE order_history (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, orderId TEXT NOT NULL, productName TEXT NOT NULL, quantity INTEGER NOT NULL, orderDate INTEGER NOT NULL, status TEXT NOT NULL, totalPrice DOUBLE NOT NULL)")
             }
         }
+
         fun getDatabase(context: Context): RoomDB {
             // if the INSTANCE is not null, then return it,
             // if it is, then create the database
