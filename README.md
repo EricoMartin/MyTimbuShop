@@ -4,11 +4,14 @@
 https://appetize.io/app/b_7wirc7uwhuor3cpcowp7vlffuy
 
 ### How to use
-Open the App and navigate through the screens using the bottom navigation menu. You can also click on the recycler view items on the home screen. 
+Open the App and navigate through the screens using the bottom navigation menu (No Authentication yet). You can also click on the recycler view items on the home screen. Click on the bell icon on the tool bar to view orderhistory. Click on cart icon on the tool bar to view cart. Search Categories by typing or clicking on provided suggestions. Click on cart icon on card to add product to cart. click on love icon to add product to favourites. Use bottom navigation bar to view cart, checkout, favourite and profile screens. Turn off network connection to view network error screen.
+
 - Add itms to cart
 - Remove items from cart
 - View order history
 - Search categories on home screen
+- Process payment
+- View Network error screen when network is unavailable.
 
  ### Screen shots
 <img src= https://github.com/user-attachments/assets/8a54f3ce-fb9c-4a54-bdff-3a91d35f6e52  width=34% height=50%>
