@@ -5,10 +5,28 @@ https://appetize.io/app/b_7wirc7uwhuor3cpcowp7vlffuy
 
 ### How to use
 Open the App and navigate through the screens using the bottom navigation menu. You can also click on the recycler view items on the home screen. 
+- Add itms to cart
+- Remove items from cart
+- View order history
+- Search categories on home screen
 
  ### Screen shots
-![2024-07-15 15-47-47 High Res Screenshot](https://github.com/user-attachments/assets/3d863052-1147-4a8f-aeb1-c52067c3c4a4)
-![2024-07-15 15-47-29 High Res Screenshot](https://github.com/user-attachments/assets/4507c1fd-b094-4280-800b-6290bbe2abe7)
+![TimbuMed12](https://github.com/user-attachments/assets/8a54f3ce-fb9c-4a54-bdff-3a91d35f6e52)
 
-![2024-07-15 15-47-13 High Res Screenshot](https://github.com/user-attachments/assets/03c9d2c5-fa5d-4ba1-9c20-258469f9507d)
+![TimbuMed10](https://github.com/user-attachments/assets/ce79382b-65bf-4ff5-adcf-db6748230f13)
+
+![TimbuMed6](https://github.com/user-attachments/assets/97e0b213-5fa6-4a2b-b404-496b05e5cee3)
+
+![TimbuMed4](https://github.com/user-attachments/assets/f0d9612e-a090-4bf5-be03-008ea4591e3d)
+
+![TimbuMed8](https://github.com/user-attachments/assets/8d64cb18-ce79-474d-a9cc-3a0533deb66e)
+
+![TimbuMed9](https://github.com/user-attachments/assets/1ea693e1-d04b-4f1c-b705-661d56efbf78)
+
+![timbus](https://github.com/user-attachments/assets/024ebd06-dc0a-4e05-abca-3dea04ec2b41)
+
+
+
+
+
 
